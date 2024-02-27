@@ -27,6 +27,7 @@ const initializeDbAndServer = async () => {
 }
 initializeDbAndServer()
 
+
 const getFollowingPeopleIdsOfUser = async username => {
   const getTheFollowingPeopleQuery = `SELECT following_user_id FROM follower
     INNER JOIN user ON user.user_id = follower.follower_user_id
@@ -35,6 +36,7 @@ const getFollowingPeopleIdsOfUser = async username => {
   const arrayOfIds = followingPeople.map(eachUser => eachUser.following_user_id)
   return arrayOfIds
 }
+//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
 
 const jwtVerification = (request, response, next) => {
   let jwtToken
